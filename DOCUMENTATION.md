@@ -58,7 +58,6 @@
     storageBucket: "your-project-id.appspot.com",
     messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
     appId: "YOUR_APP_ID",
-    measurementId: "YOUR_MEASUREMENT_ID",
   };
   ```
 
@@ -187,7 +186,6 @@ Now enable the following services
 - After selecting your GitHub repository, under **Build Settings**
 
   - **Framework preset**: Select **Create React App**.
-
   - **Build command**: Ensure the build command is `npm run build`
   - **Build Output Directory**: Set this to `dist`.
 
@@ -195,20 +193,26 @@ Now enable the following services
 
   - You will need to add the following environment variables during the build configuration. Replace the placeholder values with the actual keys you copied from Firebase SDK and EmailJS:
 
-    ```bash
-        VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
-        VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
-        VITE_EMAILJS_USER_ID=your_emailjs_user_id
-        VITE_API_KEY=your_firebase_api_key
-        VITE_AUTH_DOMAIN=your_firebase_auth_domain
-        VITE_PROJECT_ID=your_firebase_project_id
-        VITE_STORAGE_BUCKET=your_firebase_storage_bucket
-        VITE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-        VITE_APP_ID=your_firebase_app_id
-        VITE_MEASUREMENT_ID=your_firebase_measurement_id
-    ```
+  **Note: You don’t need to add EmailJS variables for the admin side; only Firebase variables are required**
 
-    Make sure all Firebase keys from the SDK configuration (like `apiKey`, `authDomain`, etc.) are replaced with the values from your Firebase console.
+  ```Javascript
+    //EmailJS
+      VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+      VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+      VITE_EMAILJS_USER_ID=your_emailjs_user_id
+  ```
+
+  ```Javascript
+    // Firebase
+      VITE_API_KEY=your_firebase_api_key
+      VITE_AUTH_DOMAIN=your_firebase_auth_domain
+      VITE_PROJECT_ID=your_firebase_project_id
+      VITE_STORAGE_BUCKET=your_firebase_storage_bucket
+      VITE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+      VITE_APP_ID=your_firebase_app_id
+  ```
+
+  Make sure all Firebase keys from the SDK configuration (like `apiKey`, `authDomain`, etc.) are replaced with the values from your Firebase console.
 
 ### 4. Deploy the Project
 
